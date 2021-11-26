@@ -1,12 +1,10 @@
 from flask import Flask
+from ext import site
 
 def create_app():
 
     app = Flask(__name__)
 
-    @app.route("/")
-    def home():
-
-        return "<h1>Pokepedia</h1>"
+    site.init_app(app)
 
     return app
